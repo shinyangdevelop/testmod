@@ -1,6 +1,7 @@
 package com.__kommi__.testmod.world;
 
 import com.__kommi__.testmod.TestMod;
+import com.__kommi__.testmod.world.gen.ModOreGeneration;
 import com.__kommi__.testmod.world.gen.ModTreeGeneration;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,6 +12,7 @@ public class ModWorldEvents {
 
     @SubscribeEvent
     public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
+        ModOreGeneration.generateOres(event);
         ModTreeGeneration.generateTrees(event);
     }
 }
