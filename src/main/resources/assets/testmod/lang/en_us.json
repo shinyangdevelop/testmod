@@ -32,7 +32,8 @@
   "block.testmod.redwood_sapling": "Redwood Sapling",
   "block.testmod.redwood_leaves": "Redwood Leaves",
   "block.testmod.hyacinth": "Hyacinth",
+  "block.testmod.lightning_channeler": "Lightning Channeler",
   "tooltip.testmod.firestone_shift": "Hold \u00a7eSHIFT\u00a7r for more information!",
-  "tooltip.testmod.firestone": "Might set you on fire. But also might protect you from it!"
-
+  "tooltip.testmod.firestone": "Might set you on fire. But also might protect you from it!",
+  "screen.testmod.lightning_channeler": "Lightning Channeler"
 }

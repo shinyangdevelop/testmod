@@ -1,10 +1,15 @@
 package com.__kommi__.testmod;
 
 import com.__kommi__.testmod.block.ModBlocks;
+import com.__kommi__.testmod.container.ModContainers;
 import com.__kommi__.testmod.item.ModItems;
+import com.__kommi__.testmod.screen.LightningChannelerScreen;
+import com.__kommi__.testmod.tileentity.LightningChannelerTile;
+import com.__kommi__.testmod.tileentity.ModTileEntities;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.AxeItem;
@@ -41,6 +46,8 @@ public class TestMod
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModTileEntities.register(eventBus);
+        ModContainers.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -76,7 +83,8 @@ public class TestMod
 
             RenderTypeLookup.setRenderLayer(ModBlocks.HYACINTH.get(), RenderType.getCutout());
 
-
+            ScreenManager.registerFactory(ModContainers.LIGHTNING_CHANNELER_CONTAINER.get(),
+                    LightningChannelerScreen::new);
         });
     }
         // do something that can only be done on the client

@@ -2,6 +2,7 @@ package com.__kommi__.testmod.block;
 
 import com.__kommi__.testmod.TestMod;
 import com.__kommi__.testmod.block.custom.FirestoneBlock;
+import com.__kommi__.testmod.block.custom.LightningChannelerBlock;
 import com.__kommi__.testmod.block.custom.OatsBlock;
 import com.__kommi__.testmod.block.custom.trees.RedwoodTree;
 import com.__kommi__.testmod.item.ModItemGroup;
@@ -91,6 +92,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> HYACINTH = registerBlock("hyacinth",
             () -> new FlowerBlock(Effects.HASTE, 20, AbstractBlock.Properties.from(Blocks.DANDELION)));
+
+    public static final RegistryObject<Block> LIGHTNING_CHANNELER = registerBlock("lightning_channeler",
+            () -> new LightningChannelerBlock(AbstractBlock.Properties.create(Material.IRON)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -61,7 +61,7 @@ public class Firestone extends Item {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 
-        if (Screen.hasShiftDown()) {
+        if (!Screen.hasShiftDown()) {
             tooltip.add(new TranslationTextComponent("tooltip.testmod.firestone_shift"));
         }
         else {
@@ -100,5 +100,21 @@ public class Firestone extends Item {
             BlockState blockstate = AbstractFireBlock.getFireForPlacement(world, blockpos);
             world.setBlockState(blockpos, blockstate, 11);
         }
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        ItemStack container = itemStack.copy();
+        if(container.attemptDamageItem(1, random, null)) {
+            return ItemStack.EMPTY;
+        }
+        else {
+            return container;
+        }
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return true;
     }
 }
