@@ -6,6 +6,7 @@ import com.__kommi__.testmod.item.ModItems;
 import com.__kommi__.testmod.screen.LightningChannelerScreen;
 import com.__kommi__.testmod.tileentity.LightningChannelerTile;
 import com.__kommi__.testmod.tileentity.ModTileEntities;
+import com.__kommi__.testmod.world.structure.ModStructures;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -48,6 +49,7 @@ public class TestMod
         ModBlocks.register(eventBus);
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
+        ModStructures.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -67,6 +69,8 @@ public class TestMod
             AxeItem.BLOCK_STRIPPING_MAP = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.BLOCK_STRIPPING_MAP)
                     .put(ModBlocks.REDWOOD_LOG.get(), ModBlocks.STRIPPED_REDWOOD_LOG.get())
                     .put(ModBlocks.REDWOOD_WOOD.get(), ModBlocks.STRIPPED_REDWOOD_WOOD.get()).build();
+
+            ModStructures.setupStructures();
         });
     }
 
