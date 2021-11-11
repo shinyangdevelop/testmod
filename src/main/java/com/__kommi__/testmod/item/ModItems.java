@@ -61,6 +61,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.OATS.get(), new Item.Properties().
                     food(new Food.Builder().hunger(1).saturation(0.1f).fastToEat().build()).group(ModItemGroup.TEST_GROUP)));
 
+    public static final RegistryObject<Item> AMETHYST_HORSE_ARMOR = ITEMS.register("amethyst_horse_armor",
+            () -> new HorseArmorItem(9, "amethyst",
+                    new Item.Properties().group(ModItemGroup.TEST_GROUP)));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
